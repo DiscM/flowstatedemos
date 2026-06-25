@@ -1,9 +1,4 @@
 # Earth Challenge QuickStart
-
-This guide turns the demo projects in this folder into 30-60 minute Earth Challenge builds. It is intentionally loose: each section gives you a theme, the files to open first, what to add, and a short tutorial path.
-
-Core prompt: make something that helps someone feel what is at stake, or what is possible, around climate change.
-
 Solarpunk themes to lean on:
 
 - Repair over replace
@@ -94,8 +89,8 @@ Open first:
 
 Existing mechanics to reuse:
 
-- The player already moves, jumps, shoots, falls, and respawns.
-- Coins already detect the player and increment `body.coins`.
+- You already move, jump, shoot, fall, and respawn.
+- Coins already detect you and increment `body.coins`.
 - `player.gd` already updates the floating coin counter.
 - The main scene already contains many coins and enemies.
 
@@ -109,13 +104,15 @@ Good challenge ideas:
 - Radio Signal Rescue
 - The Last Cool Room
 - Neighborhood Bulletin Board
+- Microgrid Cable Connector
+- Seed Bombing Run
 
 ### What To Add
 
 For a 30-minute version:
 
 - Rename the idea of `coins` into a climate resource: seeds, tools, compost, repair parts, or water canisters.
-- Change the player counter from only a number into a goal label.
+- Change the counter from only a number into a goal label.
 - Move or delete some coin instances in `game.tscn` so the path feels intentional.
 - Add one ending condition when enough resources are collected.
 
@@ -123,7 +120,7 @@ For a 60-minute version:
 
 - Add 2-3 resource types using duplicated coin scenes.
 - Add a final drop-off zone such as `GardenDropoff`, `RepairCafe`, or `CoolingCenter`.
-- Add short narrative text when the player completes the goal.
+- Add short narrative text when you complete the goal.
 - Tune enemy placement so hazards feel like heat, debris, distance, or time pressure instead of monsters.
 
 ### Loose Tutorial: Rooftop Garden Run
@@ -134,7 +131,7 @@ Goal: collect seed packets and water canisters to restore a rooftop garden.
 2. Find the `Coins` node. Keep 10-20 coins and delete or move the rest for a shorter route.
 3. Open `platformer/player/player.gd`.
 4. Find the counter update in `_physics_process`, where `%CoinCount.text = str(coins)`.
-5. Change the visible counter to say what the player is collecting.
+5. Change the visible counter to say what you are collecting.
 
 Example:
 
@@ -154,7 +151,7 @@ if coins >= 20:
 ```
 
 7. Optional: duplicate `coin.tscn` into `seed.tscn` and adjust the material color to green or gold.
-8. Run `platformer/project.godot` and make sure the player can finish in under five minutes.
+8. Run `platformer/project.godot` and make sure you can finish in under five minutes.
 
 ### Loose Tutorial: Radio Signal Rescue
 
@@ -174,11 +171,11 @@ Signal restored. The neighborhood can hear the storm updates again.
 
 ### Judging Prompt
 
-Ask players:
+Ask:
 
 - What did you restore?
 - Who benefits from it?
-- What does the player understand by the end that they did not at the start?
+- What do you understand by the end that you did not at the start?
 
 ## Project 2: `truck_town`
 
@@ -207,6 +204,8 @@ Good challenge ideas:
 - Festival Before Sunset
 - Festival Power Budget
 - Neighborhood Mood Shift
+- Mobile Repair Unit
+- Food Forest Harvest
 
 ### What To Add
 
@@ -284,22 +283,22 @@ Goal: choose which stations receive limited stored solar power.
 
 1. Add 5 delivery zones: Lights, Music, Food, Cooling Tent, Transit.
 2. Set `deliveries_needed` to 3, not 5.
-3. When the player delivers to 3 zones, lock the rest and show final text.
+3. When you deliver to 3 zones, lock the rest and show final text.
 4. Make the ending say what was powered and what had to wait.
 
 Suggested ending:
 
 ```text
 The festival opens with food, cooling, and transit powered.
-The town writes down what to improve before the next heatwave.
+Write down what to improve before the next heatwave.
 ```
 
 ### Judging Prompt
 
-Ask players:
+Ask:
 
 - Which delivery mattered most?
-- What did they choose not to power?
+- What did you choose not to power?
 - Did the town feel more alive by the end?
 
 ## Project 3: `multiplayer_bomber`
@@ -318,7 +317,7 @@ Open first:
 
 Existing mechanics to reuse:
 
-- Players can move around a tile map.
+- You can move around a tile map.
 - Bombs already affect objects in range.
 - Rocks already call `Score.increase_score`.
 - The game already checks when all rocks are gone.
@@ -329,6 +328,8 @@ Good challenge ideas:
 - Repair Over Replace
 - Solar Tile Salvage
 - Stormproof Workshop
+- Wildfire Firebreak
+- Water Filtration Network
 
 ### What To Add
 
@@ -396,11 +397,11 @@ Goal: clear debris to uncover reusable solar tiles.
 
 ### Judging Prompt
 
-Ask players:
+Ask:
 
 - Did the mechanics feel like repair, or still like destruction?
 - What wording or visual change helped most?
-- Did players cooperate naturally?
+- Did you cooperate naturally?
 
 ## Project 4: `voxel`
 
@@ -417,8 +418,8 @@ Open first:
 
 Existing mechanics to reuse:
 
-- The player can move in first person.
-- The player can place and break blocks.
+- You can move in first person.
+- You can place and break blocks.
 - Blocks are selected with previous/next controls or pick block.
 - Terrain generation already supports flat grass.
 
@@ -429,6 +430,8 @@ Good challenge ideas:
 - Accessible Route Builder
 - Unbury the River
 - Old World Device
+- Floodplain Restorer
+- Vertical Forest Architect
 
 ### What To Add
 
@@ -437,7 +440,7 @@ For a 30-minute version:
 - Use the existing block placement as the whole challenge.
 - Define a start point, an end point, and 3 required build features.
 - Add a simple instruction label to the menu or scene.
-- Judge manually by checking whether the player built the requested space.
+- Judge manually by checking whether you built the requested space.
 
 For a 60-minute version:
 
@@ -471,7 +474,7 @@ Required: flowers/shelter, water, shade, and a walkable path.
 
 6. If you want a stricter beginner experience, temporarily prevent block cycling outside your chosen range in `player.gd`.
 7. Place two visible markers in the world: start and end. These can be simple colored blocks or `MeshInstance3D` cubes.
-8. Let players build for 15-25 minutes, then do a walkthrough.
+8. Spend 15-25 minutes building, then do a walkthrough.
 
 ### Loose Tutorial: Heat Island Rescue Map
 
@@ -479,21 +482,21 @@ Goal: transform a hot, exposed area into a cooler public route.
 
 1. Start from the flat terrain mode.
 2. Define a rectangular area as the "hot block."
-3. Ask players to add:
+3. Add:
 
 - A shaded path
 - Rest spots
 - Water or cooling features
 - A route wide enough to navigate
 
-4. Optional stretch: add a final screenshot or walkthrough where the player explains their design.
+4. Optional stretch: add a final screenshot or walkthrough to explain your design.
 
 ### Judging Prompt
 
-Ask players:
+Ask:
 
-- Can someone cross the map comfortably?
-- Where would a person rest?
+- Can you cross the map comfortably?
+- Where can you rest?
 - What changed from extraction/consumption to care/maintenance?
 
 ## Project 5: `dynamic_split_screen`
@@ -509,8 +512,8 @@ Open first:
 
 Existing mechanics to reuse:
 
-- Two players already move independently.
-- The screen splits when players separate.
+- You and a partner already move independently.
+- The screen splits when you separate.
 - The world already has walls and a shared play space.
 - The split line is customizable through `camera_controller.gd`.
 
@@ -519,6 +522,8 @@ Good challenge ideas:
 - Two Communities, One Bridge
 - Bridge of Compromise
 - Mutual Aid Maze
+- Geothermal Valve Tuners
+- Wildlife Corridor Guide
 
 ### What To Add
 
@@ -526,7 +531,7 @@ For a 30-minute version:
 
 - Add 2-3 paired activation zones.
 - Add a shared progress label.
-- Require both players to stand near matching stations.
+- Require both of you to stand near matching stations.
 - End with a message that the bridge or route is complete.
 
 For a 60-minute version:
@@ -534,11 +539,11 @@ For a 60-minute version:
 - Add a simple sequence: station 1, then station 2, then station 3.
 - Add different station names: Water, Food, Transit, Clinic.
 - Change split line color/thickness to reflect distance or cooperation.
-- Adjust walls so players must communicate.
+- Adjust walls so you must communicate.
 
 ### Loose Tutorial: Two Communities, One Bridge
 
-Goal: two players must coordinate to build bridge sections.
+Goal: coordinate with a partner to build bridge sections.
 
 1. Open `dynamic_split_screen/split_screen.tscn`.
 2. Add a `CanvasLayer` with a `Label` named `ChallengeLabel`.
@@ -552,7 +557,7 @@ Goal: two players must coordinate to build bridge sections.
 
 5. Give each `Area3D` a `CollisionShape3D`.
 6. Create a new script named `bridge_challenge.gd` and attach it to `BridgeStations`.
-7. Track whether each player is inside the current pair.
+7. Track whether each of you is inside the current pair.
 
 Example shape:
 
@@ -585,19 +590,19 @@ func set_ready(player_id: int, ready: bool) -> void:
 
 ### Loose Tutorial: Mutual Aid Maze
 
-Goal: players guide each other through different parts of the same map.
+Goal: guide each other through different parts of the same map.
 
 1. Move walls in `split_screen.tscn` to create two partial routes.
 2. Place supplies on one side and repair stations on the other.
-3. Add a rule: a pickup only counts when both players reach their next stations.
-4. Encourage players to talk out loud while navigating.
+3. Add a rule: a pickup only counts when both of you reach your next stations.
+4. Talk out loud while navigating.
 
 ### Judging Prompt
 
-Ask players:
+Ask:
 
 - Did the split screen make distance feel meaningful?
-- Did both players have something useful to do?
+- Did both of you have something useful to do?
 - Did the ending feel like reconnection?
 
 ## Project 6: `2.5d`
@@ -614,7 +619,7 @@ Open first:
 
 Existing mechanics to reuse:
 
-- The player can move and jump in a 2.5D space.
+- You can move and jump in a 2.5D space.
 - The scene already contains platforms.
 - The project supports several view modes.
 - `Node25D` converts 3D positions into 2D presentation.
@@ -625,6 +630,8 @@ Good challenge ideas:
 - The Last Cool Room
 - Festival Before Sunset
 - Community Skill Tree
+- Rainwater Gravity Feed
+- Bike-Powered Outdoor Cinema
 
 ### What To Add
 
@@ -633,7 +640,7 @@ For a 30-minute version:
 - Rearrange platforms into a small public space.
 - Add labels for community features: shade, water, repair, transit, garden, library.
 - Add a simple checklist.
-- Make the player walk through the finished space.
+- Walk through the finished space.
 
 For a 60-minute version:
 
@@ -668,7 +675,7 @@ Transit Hub Checklist
 - Shared information
 ```
 
-6. Optional: add `Area2D` or `Area3D` triggers so the checklist completes as the player visits each station.
+6. Optional: add `Area2D` or `Area3D` triggers so the checklist completes as you visit each station.
 7. Run the scene and make sure the route is readable from the default view.
 
 ### Loose Tutorial: The Last Cool Room
@@ -677,7 +684,7 @@ Goal: prepare a cooling center during a heatwave.
 
 1. Pick one platform as the cooling center.
 2. Add four stations around it: fans, plants, curtains, battery packs.
-3. Add a label that tells the player what remains.
+3. Add a label that tells you what remains.
 4. When all stations are visited, show:
 
 ```text
@@ -686,7 +693,7 @@ Cooling center ready. Nobody has to face the heat alone.
 
 ### Judging Prompt
 
-Ask players:
+Ask:
 
 - Can you tell what the place is for without reading a paragraph?
 - Does the space feel public and welcoming?
@@ -702,6 +709,7 @@ Ask players:
 - `platformer`: Compost Chain Reaction
 - `platformer`: Seed Vault Discovery
 - `platformer`: Neighborhood Bulletin Board
+- `platformer`: Seed Bombing Run
 - `multiplayer_bomber`: Repair Cafe Stories
 
 ### Difficulty 2: Light Gameplay Additions
@@ -712,8 +720,13 @@ Ask players:
 - `truck_town`: Festival Before Sunset
 - `truck_town`: Festival Power Budget
 - `truck_town`: Neighborhood Mood Shift
+- `truck_town`: Mobile Repair Unit
+- `truck_town`: Food Forest Harvest
 - `platformer`: Radio Signal Rescue
+- `platformer`: Microgrid Cable Connector
 - `platformer` or `2.5d`: The Last Cool Room
+- `multiplayer_bomber`: Wildfire Firebreak
+- `2.5d`: Bike-Powered Outdoor Cinema
 
 ### Difficulty 3: Scene Building Or Systems Remix
 
@@ -721,12 +734,17 @@ Ask players:
 - `voxel`: Heat Island Rescue Map
 - `voxel`: Accessible Route Builder
 - `voxel`: Unbury the River
+- `voxel`: Floodplain Restorer
+- `voxel`: Vertical Forest Architect
 - `dynamic_split_screen`: Two Communities, One Bridge
 - `dynamic_split_screen`: Bridge of Compromise
 - `dynamic_split_screen`: Mutual Aid Maze
+- `dynamic_split_screen`: Geothermal Valve Tuners
 - `multiplayer_bomber`: Repair Over Replace
 - `multiplayer_bomber`: Solar Tile Salvage
 - `multiplayer_bomber`: Stormproof Workshop
+- `multiplayer_bomber`: Water Filtration Network
+- `2.5d`: Rainwater Gravity Feed
 
 ### Difficulty 4: Most Ambitious For 60 Minutes
 
@@ -735,13 +753,88 @@ Ask players:
 - `2.5d`: No Ads Transit Hub
 - `truck_town` or `platformer`: Storm Resource Council
 - `platformer`: Community Skill Tree
+- `dynamic_split_screen`: Wildlife Corridor Guide
+
+## Additional Challenge & Game Loop Pairings
+
+Here are more examples of climate-focused challenge themes paired with concrete gameplay mechanics you can implement:
+
+### Project 1: `platformer` (Vertical / Collectible Loops)
+- **Microgrid Cable Connector**: 
+  - *Game Loop*: Connect solar battery packs across high rooftops. Instead of collecting coins, you carry cable segments to sockets at high points to bridge communities.
+- **Seed Bombing Run**:
+  - *Game Loop*: Reach barren building ledges within a limit. Touching a ledge spawns ivy meshes and flowers, turning concrete gray into green.
+
+### Project 2: `truck_town` (Logistics / Delivery Loops)
+- **Mobile Repair Unit**:
+  - *Game Loop*: Drive a tool-filled truck to broken farm machinery around town. Each location requires you to stop, wait 5 seconds for repair, and proceed before the harvest heatwave hits.
+- **Food Forest Harvest**:
+  - *Game Loop*: Gather ripe produce from community orchards and deliver them to neighborhood distribution pantries before sunset.
+
+### Project 3: `multiplayer_bomber` (Grid / Action Loops)
+- **Wildfire Firebreak**:
+  - *Game Loop*: Clear combustible dry brush (replacing rocks) to build a firebreak around the community greenhouse. Bombs represent controlled burns.
+- **Water Filtration Network**:
+  - *Game Loop*: Clear debris blocks to connect piping and gravel filters, restoring the neighborhood's clean water flow.
+
+### Project 4: `voxel` (3D Construction / Environmental Loops)
+- **Floodplain Restorer**:
+  - *Game Loop*: Excavate pathways and place wetland blocks (spongy grass or water) to divert rain channels away from residential structures.
+- **Vertical Forest Architect**:
+  - *Game Loop*: Build trellises and plant moss/ivy blocks on concrete structures to lower local ambient temperature.
+
+### Project 5: `dynamic_split_screen` (Cooperative Coordination Loops)
+- **Geothermal Valve Tuners**:
+  - *Game Loop*: You and a partner must locate and stand on pressure valves on opposite sides of a geothermal plant simultaneously to prevent a blackout.
+- **Wildlife Corridor Guide**:
+  - *Game Loop*: One character guides a migrating animal herd while the partner clears barriers, opens gates, and redirects traffic on their side of the screen.
+
+### Project 6: `2.5d` (Diorama / Activation Loops)
+- **Rainwater Gravity Feed**:
+  - *Game Loop*: Assemble a gravity-fed water system with gutter pipes and collection barrels across platforms to capture rain for the dry season.
+- **Bike-Powered Outdoor Cinema**:
+  - *Game Loop*: Setup bike generators and run wiring to power a community film screening. You must activate dynamos in sequence to keep the movie running.
+
+## Generic Climate & Solarpunk Game Ideas (Engine-Agnostic)
+
+If you are building a custom project from scratch using web technologies (HTML/JS/Canvas) or another game engine, here are generic, engine-agnostic game loops to spark inspiration. They focus on community, restoration, and care instead of typical conflict/extraction mechanics.
+
+### 1. The Shared Tool Library (Logistics / Inventory Management)
+- **Theme**: Mutual aid, tool sharing, and community maintenance.
+- **Core Loop**: You manage a neighborhood tool shed. Residents arrive with repair requests (e.g., "fixing a leaky window" or "pruning community orchards"). You must select the appropriate tools, hand them over, and check them back in when returned, performing repairs on the tools when their wear levels get too high.
+- **Loose Guidelines**: Track tool inventory and wear states. Introduce a dynamic queue of incoming requests with different urgency levels. The goal is to maximize neighborhood satisfaction and tool longevity while staying within a limited community budget.
+
+### 2. Microgrid Balancing Act (Puzzle / Resource Allocation)
+- **Theme**: Renewable energy, battery storage, and dynamic power distribution.
+- **Core Loop**: Direct power from fluctuating renewable sources (solar panels active during the day, wind turbines active during storms) into a shared battery bank, then allocate that power to critical city structures.
+- **Loose Guidelines**: Define power inputs based on changing weather conditions and power demands for different buildings (e.g., clinic, cooling center, water pumps, residential lighting). When demand exceeds generation, choose which sectors to brown out. The game is lost if critical sectors remain unpowered for too long.
+
+### 3. Rewilding the City (Grid-Based / Spatial Puzzle)
+- **Theme**: Urban agriculture, green corridors, and reducing the urban heat island effect.
+- **Core Loop**: Place green infrastructure tiles (shade trees, bioswales, insect hotels, native wild meadows, rain gardens) onto a grid representing a hot, concrete-paved street.
+- **Loose Guidelines**: Give each tile type a set of resource costs (soil, water, compost) and positive local impacts (shade trees reduce local heat, bioswales capture storm runoff, native meadows boost biodiversity). The goal is to reach a target temperature reduction and biodiversity index before a heatwave strikes.
+
+### 4. Mutual Aid Courier (Navigation / Hazard Avoidance)
+- **Theme**: Direct action, community care, and disaster resilience.
+- **Core Loop**: Navigate a map during an extreme weather event (like a flood or blizzard) to deliver critical supplies (water filters, medicine, battery packs, radios) to isolated neighbors.
+- **Loose Guidelines**: You have limited carrying capacity and physical stamina or battery life. Navigating through hazard zones (flooded streets, high winds) drains your stamina faster. You must coordinate visits to community relief hubs to restock and rest.
+
+### 5. Compost Chain Reaction (Physics / Merge Puzzle)
+- **Theme**: Closing the loop on waste, soil health, and organic restoration.
+- **Core Loop**: Drop or slide organic waste items (food scraps, dried leaves, cardboard, coffee grounds) into a compost bin to combine them. Matching organic waste types merges them, advancing them through decomposition stages until they become rich organic compost.
+- **Loose Guidelines**: Implement simple grid or physics-based merging (like a matching puzzle). The goal is to generate a target amount of high-quality compost to nourish a community crop field before the planting season ends.
+
+### 6. The Migration Guide (Pathfinding / Environmental Influence)
+- **Theme**: Habitat restoration and ecological corridors.
+- **Core Loop**: Help a migrating group of wild animals cross a fragmented landscape safely. You do not control the animals directly; instead, you build bridges, clear waste, plant edible flora, and block hazardous areas ahead of them.
+- **Loose Guidelines**: The animals use automatic pathfinding to traverse the screen. You have a limited resource pool (or build actions) to edit paths, disable fences, or plant safe zones. The goal is to guide a minimum percentage of the herd safely to the other side.
 
 ## Final Polish Checklist
 
 Use this checklist in the last 10 minutes:
 
-- The player knows the goal within 10 seconds.
-- The progress indicator changes when the player does the right thing.
+- The goal is clear within 10 seconds.
+- The progress indicator changes when you do the right thing.
 - The challenge can be completed in under five minutes.
 - The ending text names the community benefit.
 - At least one visual or mechanic says "repair, care, or cooperation" instead of only "win."
